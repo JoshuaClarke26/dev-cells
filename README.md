@@ -13,7 +13,11 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```shell
 venv\scripts\activate
 ```
-4. Install requirements.
+4. Move directory into project area.
+```shell
+cd dc_source
+```
+5. Install requirements.
 ```shell
 pip install -r requirements.txt
 ```
@@ -27,7 +31,11 @@ python3 -m venv venv
 ```shell
 source ./venv/bin/activate
 ```
-3. Install requirements.
+3. Move into project area.
+```shell
+cd dc_source
+```
+4. Install requirements.
 ```shell
 pip install -r requirements.txt
 ```
