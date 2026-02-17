@@ -11,12 +11,10 @@ def home_view(request:HttpRequest):
 
 def landing_view(request:HttpRequest):
     return render(request, "dc_main/landing_page.html")
-<<<<<<< privacy-page
 def Register_view(request:HttpRequest):
     return render(request, "dc_main/Register.html")
 def privacy_view(request:HttpRequest):
     return render(request, "dc_main/privacypolicy.html")
-=======
 
 def login_view(request: HttpRequest):
     # Checks to see if the form was submitted and to save the values inputted as variables.
@@ -73,4 +71,3 @@ def signup_view(request: HttpRequest):
 
 def profile_view(request:HttpRequest):
     return render(request, "dc_main/profile.html")
->>>>>>> master
