@@ -12,6 +12,7 @@ def home_view(request:HttpRequest):
 def landing_view(request:HttpRequest):
     return render(request, "dc_main/landing_page.html")
 
+
 def login_view(request: HttpRequest):
     # Checks to see if the form was submitted and to save the values inputted as variables.
     if request.method == "POST":
