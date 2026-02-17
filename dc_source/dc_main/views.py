@@ -60,3 +60,6 @@ def signup_view(request: HttpRequest):
 
     # Defult line that was used to close the function before.
     return render(request, "dc_main/signup.html")
+
+def info_view(request):
+    return render(request, "dc_main/info-packs.html")
