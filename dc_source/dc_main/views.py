@@ -5,3 +5,5 @@ from django.http import HttpRequest
 # Create your views here.
 def home_view(request:HttpRequest):
     return render(request, "dc_main/home.html")
+def Register_view(request:HttpRequest):
+    return render(request, "dc_main/Register.html")
