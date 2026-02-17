@@ -1,7 +1,159 @@
 {% extends "base.html" %}
 {% load static %}
+ 
 {% block title %}Home{% endblock %}
-
+ 
 {% block content %}
-<h1 class="has-text-centered title">Dev Cells!</h1>
+ 
+ 
+<style>
+.column .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+ 
+.column .card:hover {
+  transform: scale(1.05);
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    if (!localStorage.getItem("visited")) {
+        window.location.href = "/landing";
+    }
+});
+</script>
+
+ 
+<section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+          <div class="box has-text-centered">
+            <p>
+              Welcome to the Development Cell (Dev Cell) system, a secure platform for managing structured employee development reviews. Individuals Create and maintain their information pack. Each review creates a snapshot to preserve a clear historical record, ensuring development progress and agreed actions are tracked consistently in one place.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+<div class="container">
+  <div class="columns is-multiline">
+ 
+    <div class="column is-4">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">View My Info Pack</p>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Phasellus nec iaculis mauris.
+          </div>
+        </div>
+        <footer class="card-footer">
+          <a href="#" class="card-footer-item">View</a>
+        </footer>
+      </div>
+    </div>
+ 
+    <div class="column is-4">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">Create New Draft</p>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Phasellus nec iaculis mauris.
+          </div>
+        </div>
+        <footer class="card-footer">
+          <a href="#" class="card-footer-item">View</a>
+        </footer>
+      </div>
+    </div>
+ 
+    <div class="column is-4">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">Schedule Review</p>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Phasellus nec iaculis mauris.
+          </div>
+        </div>
+        <footer class="card-footer">
+          <a href="#" class="card-footer-item">View</a>
+        </footer>
+      </div>
+    </div>
+ 
+    <div class="column is-4">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">Approve Drafts</p>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Phasellus nec iaculis mauris.
+          </div>
+        </div>
+        <footer class="card-footer">
+          <a href="#" class="card-footer-item">View</a>
+        </footer>
+      </div>
+    </div>
+ 
+    <div class="column is-4">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">View Snapshots</p>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Phasellus nec iaculis mauris.
+          </div>
+        </div>
+        <footer class="card-footer">
+          <a href="#" class="card-footer-item">View</a>
+        </footer>
+      </div>
+    </div>
+ 
+    <div class="column is-4">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">Generate Report</p>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Phasellus nec iaculis mauris.
+          </div>
+        </div>
+        <footer class="card-footer">
+          <a href="#" class="card-footer-item">View</a>
+        </footer>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="container" style="display: flex; justify-content: center; align-items: center; text-align: center;">
+  <div>
+      <a href="" style="outline: none; text-decoration: none; color: inherit;">Accessibility</a> |
+      <a href="" style="outline: none; text-decoration: none; color: inherit;">Privacy</a> |
+      <a href="" style="outline: none; text-decoration: none; color: inherit;">Contact</a> |
+      <a href="" style="outline: none; text-decoration: none; color: inherit;">Version</a>
+  </div>
+</div>
+<br>
+ 
 {% endblock %}
