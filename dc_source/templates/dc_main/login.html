@@ -3,6 +3,15 @@
 {% load static %}
 {% block content %}
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    if (!localStorage.getItem("visited")) {
+        window.location.href = "/landing";
+    }
+});
+</script>
+
+
 <div>
     <div class="main column is-3 my-6 container box px-4">
         <h2 class="title has-text-centered dText mt-4">Login</h2>
