@@ -33,7 +33,7 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item rr-nav-element navbar-item-effect rr-white"><i class="fa fa-home"></i>
+                <a class="navbar-item rr-nav-element navbar-item-effect rr-white" href="{% url 'home' %}"><i class="fa fa-home"></i>
                     Home
                 </a>
 
@@ -44,10 +44,10 @@
 
             <div class="navbar-end">
                 <div class="navbar-item">
-                    <a class="button is-primary">
+                    <a class="button is-primary" href="{% url 'signup' %}">
                         <strong>Sign up</strong>
                     </a>
-                    <a class="button">
+                    <a class="button" href="{% url 'login' %}">
                         Log in
                     </a>
                 </div>
