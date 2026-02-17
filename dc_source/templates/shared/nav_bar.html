@@ -12,31 +12,37 @@
     <nav class="navbar px-5" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </a>
         </div>
 
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item rr-nav-element navbar-item-effect"><i class="fa fa-home"></i>
+                
+                <a href="{% url 'home' %}" class="navbar-item rr-nav-element navbar-item-effect">
+                    <i class="fa fa-home"></i>
                     Home
                 </a>
 
-                <a class="navbar-item rr-nav-element navbar-item-effect"><i class="fa fa-info"></i>
+                <a href="info-packs.html" class="navbar-item rr-nav-element navbar-item-effect">
+                    <i class="fa fa-info"></i>
                     Info Packs
                 </a>
+
             </div>
+        
+
 
             <div class="navbar-end">
                 <div class="navbar-item">
-                    <a class="button is-primary">
-                        <strong>Sign up</strong>
+                    <a class="button is-primary"
+                         href="/Register">Register</a></strong>
                     </a>
-                    <a class="button">
-                        Log in
+                    <a class="button"
+                         href="/login">Login</a></strong>
                     </a>
                 </div>
             </div>
