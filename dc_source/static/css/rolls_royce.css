@@ -24,11 +24,23 @@
   height: 4px;
   left: 50%;
   position: absolute;
-  background: #fff;
+  background: #ffffff;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
 .rr-nav-element:hover:after { 
   width: 100%; 
   left: 0; 
+}
+
+.navbar, .nav-container{
+  background-color: #10069fb4;
+}
+
+.button-colour{
+  background-color: #10069fb4;
+}
+.navbar-item-effect{
+  color: rgb(255, 255, 255);
+  font-size: medium;
 }
