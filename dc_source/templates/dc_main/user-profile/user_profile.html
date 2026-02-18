@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+
+<div class="section">
+
+    <div class="container">
+        <h1 class="title mb-6">Hello {{ request.user.username }}!</h1>
+    </div>
+
+    <div class="container mt-5 px-5">
+        <div class="columns">
+
+            <div class="column is-3">
+                <div class="menu">
+                    <h2 class="title is-4">My Account</h2>
+                    <ul class="menu-list">
+                        <li><a href="{% url 'user-profile' %}" class="is-active has-text-weight-semibold">Home</a></li>
+                        <li><a href="{% url 'user-details' %}">My Details</a></li>
+                        <li><a href="{% url 'user-preferences' %}">Preferences</a></li>
+                        <div class="horizontal-line"></div>
+                        <li><a class="box-top has-text-danger has-text-weight-bold" href="{% url 'logout' %}">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="vertical-line"></div>
+
+            <div class="column is-9">
+                <div>
+                    <h2 class="title is-4">Dashboard</h2>
+                    <hr>    
+                    <div class="content">
+                        In development..
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
