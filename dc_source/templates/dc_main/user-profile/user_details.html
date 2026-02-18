@@ -16,9 +16,10 @@
                     <h2 class="title is-4">My Account</h2>
                     <ul class="menu-list">
                         <li><a href="{% url 'user-profile' %}">Home</a></li>
-                        <li><a href="{% url 'user-details' %}" class="is-active">My Details</a></li>
+                        <li><a href="{% url 'user-details' %}" class="is-active has-text-weight-semibold">My Details</a></li>
                         <li><a href="{% url 'user-preferences' %}">Preferences</a></li>
-                        <li><a href="#">Sign Out</a></li>
+                        <div class="horizontal-line"></div>
+                        <li><a class="has-text-danger has-text-weight-bold" href="{% url 'logout' %}">Log Out</a></li>
                     </ul>
                 </div>
             </div>

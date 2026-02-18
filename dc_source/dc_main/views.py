@@ -6,6 +6,8 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
+from django.shortcuts import redirect
 
 # Create your views here.
 def home_view(request:HttpRequest):
@@ -79,3 +81,7 @@ def user_details_view(request:HttpRequest):
 @login_required
 def user_preferences_view(request:HttpRequest):
     return render(request, "dc_main/user-profile/user_preferences.html")
+
+def logout_view(request):
+    logout(request)
+    return redirect('home')
