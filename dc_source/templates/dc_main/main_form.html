@@ -1,0 +1,329 @@
+
+
+{% extends "base.html" %}
+
+{% block title %}Dev Cell Review{% endblock %}
+
+{% block content %}
+
+<form action="/login/form_data" method="post">
+    {% csrf_token %}
+
+    {% if user.role == "Administrator" %}
+        <button href="/ConfiguredListEditor/"> Edit... </button>
+    {% endif %}<br>
+
+    {% if user.role in FIELD_PERMISSIONS.user_name.visible%}
+
+    <label> Username: </label>
+
+        {% if user.role in FIELD_PERMISSIONS.user_name.editable %}
+        
+        <input type="text" id="username" name="username">
+
+        {% else %}
+
+            <input type="text" value="{{ value }}" readonly>
+
+        {% endif %}
+
+    {% endif %} <BR>
+
+    {% if user.role in FIELD_PERMISSIONS.name.visible%}
+
+    <label> Name: </label>
+
+        {% if user.role in FIELD_PERMISSIONS.name.editable %}
+        
+        <input type="text" id="name" name="name">
+
+        {% else %}
+
+            <input type="text" value="{{ value }}" readonly>
+
+        {% endif %}
+
+    {% endif %}<BR>
+
+ 
+    {% if user.role in FIELD_PERMISSIONS.manager.visible%}
+
+    <label> Manager: </label>
+
+        {% if user.role in FIELD_PERMISSIONS.manager.editable %}
+        
+        <input type="text" id="manager" name="manager">
+
+        {% else %}
+
+            <input type="text" value="{{ value }}" readonly>
+
+        {% endif %}
+
+    {% endif %}<BR>
+
+    {% if user.role in FIELD_PERMISSIONS.Photo.visible%}
+
+    <label> Photo: </label>
+
+        {% if user.role in FIELD_PERMISSIONS.Photo.editable %}
+        
+        <input type="file" id="photo" name="photo">
+
+        {% else %}
+
+            <input type="file" value="{{ value }}" readonly>
+
+        {% endif %}
+
+    {% endif %}<BR>
+
+    {% if user.role in FIELD_PERMISSIONS.Grade.visible%}
+
+    <label> Grade: </label>
+
+        {% if user.role in FIELD_PERMISSIONS.Grade.editable %}
+        
+            <select name="Grade">
+                {% for option in GRADE_CHOICES %}
+                    <option value="{{option}}">{{option}}</option>
+                {% endfor %}
+            </select>
+        {% else %}
+            <input type="text" value="{{option}}" readonly>
+        {% endif %}
+    {% endif %}<BR>
+
+    {% if user.role in FIELD_PERMISSIONS.Position.visible%}
+
+
+    <label> Position: </label>
+
+        {% if user.role in FIELD_PERMISSIONS.Position.editable %}
+        
+            <select name="Position">
+                {% for option in POSITION_CHOICES %}
+                    <option value="{{option}}">{{option}}</option>
+                {% endfor %}
+            </select>
+        {% else %}
+            <input type="text" value="{{option}}" readonly>
+        {% endif %}
+    {% endif %}<BR>
+
+
+    {% if user.role in FIELD_PERMISSIONS.Location.visible%}
+
+
+    <label> Location: </label>
+
+        {% if user.role in FIELD_PERMISSIONS.Location.editable %}
+        
+            <select name="Location">
+                {% for option in LOCATION_CHOICES %}
+                    <option value="{{option}}">{{option}}</option>
+                {% endfor %}
+            </select>
+        {% else %}
+            <input type="text" value="{{option}}" readonly>
+
+ 
+        {% endif %}
+    {% endif %}<BR>
+
+    {% if user.role in FIELD_PERMISSIONS.History.visible%}
+
+    <label> History: </label>
+
+        {% if user.role in FIELD_PERMISSIONS.History.editable %}
+        
+        <input type="text" id="history" name="history">
+
+        {% else %}
+
+            <input type="text" value="{{ value }}" readonly>
+
+        {% endif %}
+
+    {% endif %}<BR>
+
+    {% if user.role in FIELD_PERMISSIONS.Capablilities_and_Attributes.visible%}
+
+    <label> Capabilities And Atrributes: </label>
+
+        {% if user.role in FIELD_PERMISSIONS.Capablilities_and_Attributes.editable %}
+        
+        <input type="text" id="Capablilities and Attributes" name="Capablilities and Attributes">
+
+        {% else %}
+
+            <input type="text" value="{{ value }}" readonly>
+
+        {% endif %} 
+
+    {% endif %}<BR>
+
+    {% if user.role in FIELD_PERMISSIONS.Career_Aspiractions.visible%}
+    
+    <label> Career Aspiractions: </label>
+
+        {% if user.role in FIELD_PERMISSIONS.Career_Aspiractions.editable %}
+        
+        <input type="text" id="Career Aspiractions" name="Career Aspiractions">
+
+        {% else %}
+
+            <input type="text" value="{{ value }}" readonly>
+
+        {% endif %} 
+
+    {% endif %}<BR>
+
+    {% if user.role in FIELD_PERMISSIONS.Development_Needs.visible%}
+    
+    <label> Development_Needs: </label>
+
+        {% if user.role in FIELD_PERMISSIONS.Development_Needs.editable %}
+        
+        <input type="text" id="Development_Needs" name="Development_Needs">
+
+        {% else %}
+
+            <input type="text" value="{{ value }}" readonly>
+
+        {% endif %} 
+
+    {% endif %}<BR>
+
+    {% if user.role in FIELD_PERMISSIONS.Next_Move.visible%}
+    
+    <label> Next Move: </label>
+
+        {% if user.role in FIELD_PERMISSIONS.Next_Move.editable %}
+        
+        <input type="text" id="Next_Move" name="Next_Move">
+
+        {% else %}
+
+            <input type="text" value="{{ value }}" readonly>
+
+        {% endif %} 
+
+    {% endif %}<BR>
+
+    {% if user.role in FIELD_PERMISSIONS.Mobility.visible%}
+
+
+    <label> Mobility: </label>
+
+        {% if user.role in FIELD_PERMISSIONS.Mobility.editable %}
+        
+            <select name="Mobility">
+                {% for option in MOBILITY_CHOICES %}
+                    <option value="{{option}}">{{option}}</option>
+                {% endfor %}
+            </select>
+        {% else %}
+            <input type="text" value="{{option}}" readonly>
+
+ 
+        {% endif %}
+    {% endif %}<BR>
+
+    {% if user.role in FIELD_PERMISSIONS.Succession_Plan.visible%}
+
+
+    <label> Succession Plan: </label>
+
+        {% if user.role in FIELD_PERMISSIONS.Succession_Plan.editable %}
+        
+            <select name="Succession_Plan">
+                {% for option in SUCCESSION_PLAN_CHOICES %}
+                    <option value="{{option}}">{{option}}</option>
+                {% endfor %}
+            </select>
+        {% else %}
+            <input type="text" value="{{option}}" readonly>
+
+ 
+        {% endif %}
+    {% endif %}<BR>
+
+    {% if user.role in FIELD_PERMISSIONS.Successor.visible%}
+    
+    <label> Successor: </label>
+
+        {% if user.role in FIELD_PERMISSIONS.Successor.editable %}
+        
+            <input type="text" id="Successor" name="Successor">
+
+        {% else %}
+
+            <input type="text" value="{{ value }}" readonly>
+
+        {% endif %} 
+
+    {% endif %}<BR>
+
+    {% if user.role in FIELD_PERMISSIONS.Potential_Grade.visible%}
+
+
+    <label> Potential Grade: </label>
+
+        {% if user.role in FIELD_PERMISSIONS.Potential_Grade.editable %}
+        
+            <select name="Potential_Grade">
+                {% for option in POTENTIAL_GRADE_CHOICES %}
+                    <option value="{{option}}">{{option}}</option>
+                {% endfor %}
+            </select>
+        {% else %}
+            <input type="text" value="{{option}}" readonly>
+
+ 
+        {% endif %}
+    {% endif %}<BR>
+
+    {% if user.role in FIELD_PERMISSIONS.Potential_Grade.visible%}
+
+
+    <label> Dev_Cell_Grade: </label>
+
+        {% if user.role in FIELD_PERMISSIONS.Dev_Cell_Grade.editable %}
+        
+            <select name="Dev_Cell_Grade">
+                {% for option in DEV_CELL_RATING_CHOICES %}
+                    <option value="{{option}}">{{option}}</option>
+                {% endfor %}
+            </select>
+        {% else %}
+            <input type="text" value="{{option}}" readonly>
+
+ 
+        {% endif %}
+    {% endif %}<BR>
+
+    {% if user.role in FIELD_PERMISSIONS.Potential_Grade.visible%}
+
+
+        <label> Performance Rating: </label>
+
+        {% if user.role in FIELD_PERMISSIONS.Performance_Rating.editable %}
+        
+            <select name="Performance_Rating">
+                {% for option in PERFORMANCE_RATING_CHOICES %}
+                    <option value="{{option}}">{{option}}</option>
+                {% endfor %}
+            </select>
+        {% else %}
+            <input type="text" value="{{option}}" readonly>
+
+ 
+        {% endif %}
+    {% endif %}<BR>
+
+
+<button type="submit"> Coolio </button>
+</form>
+
+{% endblock %}
