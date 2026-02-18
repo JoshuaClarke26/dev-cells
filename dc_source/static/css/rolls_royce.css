@@ -38,3 +38,15 @@
   object-position: left;
 
 }
+
+.vertical-line {
+  border-left: 2px solid grey;
+  height: auto;
+  margin: 0 10px;
+} 
+
+.horizontal-line {
+  border-bottom: 2px solid lightgrey;
+  width: auto;
+  padding-bottom: 10px;
+}

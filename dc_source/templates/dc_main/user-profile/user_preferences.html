@@ -17,20 +17,14 @@
                     <ul class="menu-list">
                         <li><a href="{% url 'user-profile' %}">Home</a></li>
                         <li><a href="{% url 'user-details' %}">My Details</a></li>
-                        <li><a href="{% url 'user-preferences' %}" class="is-active">Preferences</a></li>
-                        <li><a href="#">Sign Out</a></li>
+                        <li><a href="{% url 'user-preferences' %}" class="is-active has-text-weight-semibold">Preferences</a></li>
+                        <div class="horizontal-line"></div>
+                        <li><a class="has-text-danger has-text-weight-bold" href="{% url 'logout' %}">Log Out</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="vertical-line"></div>
-            <style>
-                .vertical-line {
-                    border-left: 2px solid grey;
-                    height: auto;
-                    margin: 0 10px;
-                    }
-            </style>
 
             <div class="column is-9">
                 <div class="">
