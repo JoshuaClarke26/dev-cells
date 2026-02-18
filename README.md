@@ -1,4 +1,4 @@
-# Dev Cells for Rolls Royce
+# Dev Cells for Rolls-Royce
 This is a dynamic web application which will be used to assess engineers and managers progress and ensure they are being supported in their career aspirations.
 ## Setting up the project (Windows)
 1. Create Virtual Environment. Only needs to be done on inital clone of project.
