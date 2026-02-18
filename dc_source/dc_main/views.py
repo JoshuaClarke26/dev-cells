@@ -5,6 +5,8 @@ from django.http import HttpRequest
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 def home_view(request:HttpRequest):
     return render(request, "dc_main/home.html")
@@ -65,5 +67,14 @@ def signup_view(request: HttpRequest):
     # Defult line that was used to close the function before.
     return render(request, "dc_main/signup.html")
 
-def profile_view(request:HttpRequest):
-    return render(request, "dc_main/profile.html")
+@login_required
+def user_profile_view(request:HttpRequest):
+    return render(request, "dc_main/user-profile/user_profile.html")
+
+@login_required
+def user_details_view(request:HttpRequest):
+    return render(request, "dc_main/user-profile/user_details.html")
+
+@login_required
+def user_preferences_view(request:HttpRequest):
+    return render(request, "dc_main/user-profile/user_preferences.html")

@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block title %}My Details{% endblock %}
+{% block content %}
+
+<div class="section">
+
+    <div class="container">
+        <h1 class="title mb-6">Hello {{ request.user.username }}!</h1>
+    </div>
+
+    <div class="container mt-5 px-5">
+        <div class="columns">
+
+            <div class="column is-3">
+                <div class="menu">
+                    <h2 class="title is-4">My Account</h2>
+                    <ul class="menu-list">
+                        <li><a href="{% url 'user-profile' %}">Home</a></li>
+                        <li><a href="{% url 'user-details' %}" class="is-active">My Details</a></li>
+                        <li><a href="{% url 'user-preferences' %}">Preferences</a></li>
+                        <li><a href="#">Sign Out</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="vertical-line"></div>
+            <style>
+                .vertical-line {
+                    border-left: 2px solid grey;
+                    height: auto;
+                    margin: 0 10px;
+                    }
+            </style>
+
+            <div class="column is-9">
+                <div>
+                    <h2 class="title is-4">Title</h2>
+                    <hr>    
+                    <div class="content">
+                        <p><strong>Username:</strong> {{ request.user.username }}</p>
+                        <p><strong>Email:</strong> {{ request.user.email }}</p>
+                        <p><strong>Password:</strong> {{ request.user.password }}</p>
+                        <p><strong>Date Joined:</strong> {{ request.user.date_joined }}</p>
+                        <p><strong>Last Login:</strong> {{ request.user.last_login }}</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="title is-4 mt-6">Change Password</h2>
+                    <hr>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="field">
+                            <label class="label">Current Password</label>
+                            <div class="control">
+                                <input class="input" type="password" name="current_password">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">New Password</label>
+                            <div class="control">
+                                <input class="input" type="password" name="current_password">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Confirm New Password</label>
+                            <div class="control">
+                                <input class="input" type="password" name="current_password">
+                            </div>
+                        </div>
+
+                        <div class="field mt-4">
+                            <button class="button is-link">Save</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div>
+                    <h2 class="title is-4 mt-6">Delete Account</h2>
+                    <hr>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="field">
+                            <p> 
+                                <strong>
+                                    Deleting this data will permanently remove your account, and this cannot be recovered.
+                                </strong>
+                            </p>
+                        </div>
+
+                        <div class="field mt-4">
+                            <button class="button is-danger is-link">Delete</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
