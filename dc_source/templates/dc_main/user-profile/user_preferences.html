@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %}Preferences{% endblock %}
+{% block content %}
+
+<div class="section">
+
+    <div class="container"> 
+        <h1 class="title mb-6">Hello {{ request.user.username }}!</h1>
+    </div>
+
+    <div class="container mt-5 px-5">
+        <div class="columns">
+
+            <div class="column is-3">
+                <div class="menu">
+                    <h2 class="title is-4">My Account</h2>
+                    <ul class="menu-list">
+                        <li><a href="{% url 'user-profile' %}">Home</a></li>
+                        <li><a href="{% url 'user-details' %}">My Details</a></li>
+                        <li><a href="{% url 'user-preferences' %}" class="is-active has-text-weight-semibold">Preferences</a></li>
+                        <div class="horizontal-line"></div>
+                        <li><a class="has-text-danger has-text-weight-bold" href="{% url 'logout' %}">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="vertical-line"></div>
+
+            <div class="column is-9">
+                <div class="">
+                    <h2 class="title is-4">Accessibility</h2>
+                    <hr>
+                    <form method="POST">
+                    {% csrf_token %}
+
+                    <div class="field">
+                        <label class="checkbox">
+                            <input type="checkbox" name="dark_mode"> Enable Dark Mode
+                        </label>
+                    </div>
+
+                    <div class="field">
+                        <label class="checkbox">
+                            <input type="checkbox" name="high_contrast_mode"> Enable High Contrast
+                        </label>
+                    </div>
+
+                    <div class="field">
+                        <label class="checkbox">
+                            <input type="checkbox" name="email_notifications"> Enable Notifications
+                        </label>
+                    </div>  
+
+                    <div class="field mt-4">
+                        <button class="button is-link">Save</button>
+                    </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
